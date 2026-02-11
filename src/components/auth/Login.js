@@ -1,0 +1,64 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React, { useState } from 'react';
+import { Mail, Lock, AlertCircle } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const validateEmail = (email) => {
+        return email.endsWith('@gmail.com');
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        if (!validateEmail(email)) {
+            setError('Email must end with @gmail.com');
+            return;
+        }
+        if (!password) {
+            setError('Password is required');
+            return;
+        }
+        setLoading(true);
+        try {
+            // Mock API call - Replace with actual backend endpoint
+            const response = await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                // Success
+                console.log('Login Successful', data);
+                // Store token if using JWT
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                    const name = email.split('@')[0]; // Extract name from email
+                    localStorage.setItem('user', JSON.stringify({
+                        name: name,
+                        email: data.user.email,
+                        mobile: data.user.mobile,
+                        monthly_income: data.user.monthly_income
+                    }));
+                }
+                navigate('/home');
+            }
+            else {
+                setError(data.message || 'Login failed');
+            }
+        }
+        catch (err) {
+            console.error(err);
+            setError('Failed to connect to server. Please try again later.');
+        }
+        finally {
+            setLoading(false);
+        }
+    };
+    return (_jsx("div", { className: "min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors duration-300", children: _jsx("div", { className: "flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8", children: _jsxs("div", { className: "max-w-md w-full space-y-8 bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 transition-colors duration-300", children: [_jsxs("div", { children: [_jsx("h2", { className: "mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white", children: "Welcome Back" }), _jsx("p", { className: "mt-2 text-center text-sm text-gray-600 dark:text-gray-400", children: "Sign in to access your financial dashboard" })] }), _jsxs("form", { className: "mt-8 space-y-6", onSubmit: handleSubmit, children: [_jsxs("div", { className: "rounded-md shadow-sm -space-y-px", children: [_jsxs("div", { className: "relative", children: [_jsx("label", { htmlFor: "email-address", className: "sr-only", children: "Email address" }), _jsx("div", { className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none", children: _jsx(Mail, { className: "h-5 w-5 text-gray-400" }) }), _jsx("input", { id: "email-address", name: "email", type: "email", autoComplete: "email", required: true, className: "appearance-none rounded-none relative block w-full px-3 py-3 pl-10 border border-gray-300 dark:border-slate-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-t-md focus:outline-none focus:ring-brand-blue focus:border-brand-blue focus:z-10 sm:text-sm bg-white dark:bg-slate-800 transition-colors", placeholder: "Email address (@gmail.com)", value: email, onChange: (e) => setEmail(e.target.value) })] }), _jsxs("div", { className: "relative", children: [_jsx("label", { htmlFor: "password", className: "sr-only", children: "Password" }), _jsx("div", { className: "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none", children: _jsx(Lock, { className: "h-5 w-5 text-gray-400" }) }), _jsx("input", { id: "password", name: "password", type: "password", autoComplete: "current-password", required: true, className: "appearance-none rounded-none relative block w-full px-3 py-3 pl-10 border border-gray-300 dark:border-slate-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-b-md focus:outline-none focus:ring-brand-blue focus:border-brand-blue focus:z-10 sm:text-sm bg-white dark:bg-slate-800 transition-colors", placeholder: "Password", value: password, onChange: (e) => setPassword(e.target.value) })] })] }), error && (_jsxs("div", { className: "flex items-center text-red-500 text-sm bg-red-50 dark:bg-red-900/10 p-3 rounded-lg animate-in fade-in border border-red-100 dark:border-red-900/20", children: [_jsx(AlertCircle, { className: "w-4 h-4 mr-2" }), error] })), _jsx("div", { className: "flex items-center justify-between", children: _jsx("div", { className: "text-sm", children: _jsx("a", { href: "#", className: "font-medium text-brand-blue hover:text-blue-500", children: "Forgot your password?" }) }) }), _jsx("div", { children: _jsx("button", { type: "submit", disabled: loading, className: "group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-brand-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed", children: loading ? 'Signing in...' : 'Sign in' }) }), _jsx("div", { className: "text-center text-sm", children: _jsxs("p", { className: "text-gray-600 dark:text-gray-400", children: ["Don't have an account?", ' ', _jsx(Link, { to: "/signup", className: "font-medium text-brand-blue hover:text-blue-500", children: "Sign Up" })] }) })] })] }) }) }));
+};
+export default Login;
