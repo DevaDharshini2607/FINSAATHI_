@@ -1,0 +1,37 @@
+{
+    "main_menu": {
+        "message": "Loan guidance-nu 1 amarthuka. Bank agents-nu 2 amarthuka.",
+        "options": {
+            "1": "income_check",
+            "2": "agent_contact"
+        }
+    },
+    "income_check": {
+        "message": "Ningalude masa varumanam ethra? Shambalam 10000-il thazhe aanengil 1 amarthuka. 10000-um 20000-um idayil aanengil 2 amarthuka. 20000-il kooduthal aanengil 3 amarthuka.",
+        "options": {
+            "1": "result_mini",
+            "2": "result_small",
+            "3": "result_regular"
+        }
+    },
+    "agent_contact": {
+        "message": "Nanni, oru local financial helper ningale udan bandhapedum.",
+        "is_final": true,
+        "sms_body": "Nanni, oru local financial helper ningale udan bandhapedum."
+    },
+    "result_mini": {
+        "message": "Ningal mini loans-inu anuyojyananu. Avasyamaya rkkhakal Aadhar-um Bank Passbook-um aanu. Aduthulla bank shakha sandarshikkuka. Nanni.",
+        "is_final": true,
+        "sms_body": "Mini loans-inu yogyatha. Docs: Aadhar, Bank Passbook. Bank sandarshikkuka."
+    },
+    "result_small": {
+        "message": "Ningal cheriya personal loans allenkil small business loans-inu arharanu. Avasyamaya rkkhakal Aadhar, Bank Statement, Address Proof enniva aanu. Aduthulla bank shakha sandarshikkuka. Nanni.",
+        "is_final": true,
+        "sms_body": "Small Personal/Business loans-inu yogyatha. Docs: Aadhar, Bank Stmt, Address Proof. Bank sandarshikkuka."
+    },
+    "result_regular": {
+        "message": "Flexible repayments-ulla regular bank loans-inu ningal arharanu. Aduthulla bank shakha sandarshikkuka. Nanni.",
+        "is_final": true,
+        "sms_body": "Regular bank loans-inu yogyatha. Aduthulla bank shakha sandarshikkuka."
+    }
+}

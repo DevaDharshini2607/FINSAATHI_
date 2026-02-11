@@ -1,0 +1,37 @@
+{
+    "main_menu": {
+        "message": "Press 1 for loan guidance. Press 2 for bank agents.",
+        "options": {
+            "1": "income_check",
+            "2": "agent_contact"
+        }
+    },
+    "income_check": {
+        "message": "What is your monthly income? Press 1 if your salary is below 10000. Press 2 if your salary is between 10000 and 20000. Press 3 if your salary is above 20000.",
+        "options": {
+            "1": "result_mini",
+            "2": "result_small",
+            "3": "result_regular"
+        }
+    },
+    "agent_contact": {
+        "message": "Thank You, A local financial helper will contact you soon.",
+        "is_final": true,
+        "sms_body": "Thank You, A local financial helper will contact you soon."
+    },
+    "result_mini": {
+        "message": "You are suitable for mini loans. The required documents are Aadhar and Bank Passbook. Contact the nearest branch of your bank. Thank you.",
+        "is_final": true,
+        "sms_body": "Eligible for mini loans. Docs: Aadhar, Bank Passbook. Contact bank. Thank you."
+    },
+    "result_small": {
+        "message": "You are eligible for small personal loans or small business loans. The required documents are Aadhar, Bank Statement and Address Proof. Contact the nearest branch of your bank. Thank you.",
+        "is_final": true,
+        "sms_body": "Eligible for small personal/business loans. Docs: Aadhar, Bank Stmt, Address Proof. Contact bank."
+    },
+    "result_regular": {
+        "message": "You are eligible for regular bank loans with flexible repayments. Contact the nearest branch of your bank. Thank you.",
+        "is_final": true,
+        "sms_body": "Eligible for regular bank loans with flexible repayments. Contact the nearest branch of your bank."
+    }
+}

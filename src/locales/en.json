@@ -1,0 +1,58 @@
+{
+    "navbar": {
+        "home": "Home",
+        "features": "Features",
+        "tutorials": "Tutorials",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "language": "Language",
+        "calculators": "Calculators"
+    },
+    "hero": {
+        "title": "Financial Freedom with <1>AI</1>",
+        "subtitle": "Your personal assistant for banking, budgeting, and avoiding scams.",
+        "cta": "Get Started with AI"
+    },
+    "features": {
+        "scam": "Scam Check",
+        "budget": "Budget Plan",
+        "loan": "Loan Calculator",
+        "cibil": "Cibil Check",
+        "emi": "EMI Calc",
+        "tollfree": "Toll Free"
+    },
+    "footer": {
+        "platform": "Platform",
+        "resources": "Resources",
+        "contact": "Contact Us",
+        "rights": "All rights reserved."
+    },
+    "tollfree_modal": {
+        "title": "Toll Free Support",
+        "desc": "Need help? Call our support line for free assistance with your financial queries.",
+        "call_us": "Call Us At",
+        "close": "Close"
+    },
+    "faq_items": [
+        {
+            "question": "How to open a bank account?",
+            "answer": "Visit your nearest bank branch with Aadhaar Card, PAN Card, and photos. You can also apply online via the bank’s website."
+        },
+        {
+            "question": "What is UPI?",
+            "answer": "Unified Payments Interface (UPI) allows you to transfer money instantly using your mobile number. It is safe and free."
+        },
+        {
+            "question": "How to avoid scams?",
+            "answer": "Never share your OTP or PIN with anyone. Banks will never ask for these details on call."
+        },
+        {
+            "question": "How to apply for an education loan?",
+            "answer": "You can apply through the Vidya Lakshmi portal or visit a bank branch with admission proof."
+        },
+        {
+            "question": "Is online banking safe?",
+            "answer": "Yes, if you follow safety rules like not sharing passwords and checking for \"https\" in the website URL."
+        }
+    ]
+}

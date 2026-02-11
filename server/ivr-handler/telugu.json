@@ -1,0 +1,37 @@
+{
+    "main_menu": {
+        "message": "Loan guidance kosam 1 nokkandi. Bank agents kosam 2 nokkandi.",
+        "options": {
+            "1": "income_check",
+            "2": "agent_contact"
+        }
+    },
+    "income_check": {
+        "message": "Mee nelavari aadayam entha? Mee salary 10000 kante takkuva unte 1 nokkandi. 10000 nundi 20000 madhyalo unte 2 nokkandi. 20000 kante ekkuva unte 3 nokkandi.",
+        "options": {
+            "1": "result_mini",
+            "2": "result_small",
+            "3": "result_regular"
+        }
+    },
+    "agent_contact": {
+        "message": "Dhanyavadalu, sthanika financial helper mimmalni twaralo sampradistaru.",
+        "is_final": true,
+        "sms_body": "Dhanyavadalu, sthanika financial helper mimmalni twaralo sampradistaru."
+    },
+    "result_mini": {
+        "message": "Meeru mini loans ki saripotaru. Avasaramaina documents Aadhar mariyu Bank Passbook. Mee daggarnunna bank shakhanu sampradinchandi. Dhanyavadalu.",
+        "is_final": true,
+        "sms_body": "Mini loans ki arhulu. Docs: Aadhar, Bank Passbook. Bank ni kalavandi. Thanks."
+    },
+    "result_small": {
+        "message": "Meeru chinna personal loans leda chinna business loans ki arhulu. Avasaramaina documents Aadhar, Bank Statement mariyu Address Proof. Mee daggarnunna bank shakhanu sampradinchandi. Dhanyavadalu.",
+        "is_final": true,
+        "sms_body": "Small Personal/Business loans ki arhulu. Docs: Aadhar, Bank Stmt, Address Proof. Bank ni kalavandi."
+    },
+    "result_regular": {
+        "message": "Meeru flexible repayments tho regular bank loans ki arhulu. Mee daggarnunna bank shakhanu sampradinchandi. Dhanyavadalu.",
+        "is_final": true,
+        "sms_body": "Regular bank loans ki arhulu. Mee daggarnunna bank shakhanu sampradinchandi. Thanks."
+    }
+}
