@@ -24,32 +24,34 @@ const Login = () => {
         }
         setLoading(true);
         try {
-            // Mock API call - Replace with actual backend endpoint
-            const response = await fetch('http://localhost:5000/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                // Success
-                console.log('Login Successful', data);
-                // Store token if using JWT
-                if (data.token) {
-                    localStorage.setItem('token', data.token);
-                    const name = email.split('@')[0]; // Extract name from email
-                    localStorage.setItem('user', JSON.stringify({
-                        name: name,
-                        email: data.user.email,
-                        mobile: data.user.mobile,
-                        monthly_income: data.user.monthly_income
-                    }));
+            // Mock Login - Client side only for GitHub Pages
+            console.log('Using Mock Login');
+
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Mock success based on validation already passed
+            const mockUser = {
+                token: 'mock-jwt-token',
+                user: {
+                    email: email,
+                    mobile: '9876543210',
+                    monthly_income: '50000'
                 }
-                navigate('/home');
-            }
-            else {
-                setError(data.message || 'Login failed');
-            }
+            };
+
+            // Success logic matches original
+            console.log('Login Successful', mockUser);
+            localStorage.setItem('token', mockUser.token);
+            const name = email.split('@')[0];
+            localStorage.setItem('user', JSON.stringify({
+                name: name,
+                email: mockUser.user.email,
+                mobile: mockUser.user.mobile,
+                monthly_income: mockUser.user.monthly_income
+            }));
+
+            navigate('/home');
         }
         catch (err) {
             console.error(err);
